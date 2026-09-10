@@ -6,14 +6,12 @@
 
         <title>Librería - Inicio</title>
 
+        <!-- CDN de Tailwind CSS (Carga inmediata sin compilador) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @endif
     </head>
     <body class="font-sans antialiased bg-gray-50 text-gray-800">
         <!-- Navegación -->
@@ -43,7 +41,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach ($libros as $libro)
                     <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col border border-gray-100 hover:shadow-lg transition">
-                        <!-- Portada dinámica usando el campo 'portada' -->
+                        <!-- Portada dinámica -->
                         <div class="h-40 bg-gradient-to-br {{ $libro['portada'] }} flex items-center justify-center p-4 relative">
                             @if($libro['destacado'])
                                 <span class="absolute top-3 right-3 bg-yellow-400 text-yellow-950 text-xs font-bold px-2.5 py-1 rounded-full shadow">
