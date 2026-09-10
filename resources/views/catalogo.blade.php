@@ -5,8 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Librería - Catálogo</title>
-
-        <!-- CDN de Tailwind CSS para garantizar la renderización inmediata -->
         <script src="https://cdn.tailwindcss.com"></script>
 
         <!-- Fonts -->
@@ -32,8 +30,6 @@
                 <h1 class="text-3xl font-extrabold text-gray-900">Catálogo Completo</h1>
                 <p class="text-gray-600 mt-2">Explora toda nuestra colección disponible.</p>
             </div>
-
-            <!-- Cuadrícula responsive: grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 @forelse ($libros as $libro)
                     <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col border border-gray-100 hover:shadow-lg transition">
